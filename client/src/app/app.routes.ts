@@ -32,6 +32,6 @@ export const routes: Routes = [
   },
 
   // not found
-  { path: 'notfound', component: NotFoundComponent, canActivate: [authGuard] },
+  { path: 'notfound', component: NotFoundComponent, },
   { path: '**', redirectTo: '/notfound' },
 ];
