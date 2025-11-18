@@ -3,7 +3,7 @@ import { ChartComponent } from 'ng-apexcharts';
 import { ApexAxisChartSeries, ApexChart, ApexXAxis, ApexStroke, ApexDataLabels, ApexOptions, ApexYAxis, ApexLegend, ApexGrid, ApexFill, ApexPlotOptions } from 'ng-apexcharts';
 import { DashboardTileComponent } from './dashboard-tile.component';
 import { CommonModule } from '@angular/common';
-import { SidebarService } from '../services/sidebar.service';
+import { SidebarService } from '../core/services/sidebar.service';
 
 
 

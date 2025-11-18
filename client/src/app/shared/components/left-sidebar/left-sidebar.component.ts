@@ -34,7 +34,7 @@ export class LeftSidebarComponent {
       label: 'Settings',
     },
   ];
-toggleLeftSidebar: any;
+  toggleLeftSidebar: any;
 
   toggleCollapse(): void {
     this.changeIsLeftSidebarCollapsed.emit(!this.isLeftSidebarCollapsed());

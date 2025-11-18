@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 const config = require("../config/auth.config");
-const prisma = require("../prisma/prismaClient/prismaClient");
+const { User } = require("../models");
 
 const verifyToken = async (req, res, next) => {
   let token = req.headers["authorization"];
@@ -13,19 +13,23 @@ const verifyToken = async (req, res, next) => {
     return res.status(403).send({ message: "Invalid token format!" });
   }
 
-  if (token.startsWith("Bearer ")) {
-    token = token.slice(" ")[1];
-    jwt.verify(token, config.secret, async (err, decoded) => {
-      if (err) {
-        return res.status(401).send({ message: "Unauthorized!" });
-      }
-      req.userId = decoded.id;
-      req.user = await prisma.users.findUnique({
-        where: { id: req.userId },
-      });
-      next();
-    });
-  }
+  token = token.split(" ")[1];
+
+  jwt.verify(token, config.secret, async (err, decoded) => {
+    if (err) {
+      return res.status(401).send({ message: "Unauthorized!" });
+    }
+
+    req.userId = decoded.id;
+
+    req.user = await User.findByPk(req.userId);
+
+    if (!req.user) {
+      return res.status(404).send({ message: "User not found!" });
+    }
+
+    next();
+  });
 };
 
 module.exports = {

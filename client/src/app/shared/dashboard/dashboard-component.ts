@@ -1,16 +1,16 @@
-import { Component, HostListener, OnInit, signal, inject, effect } from '@angular/core';
-import { LeftSidebarComponent } from './left-sidebar/left-sidebar.component';
-import { MainComponent } from './main/main.component';
-import { SidebarService } from './services/sidebar.service';
+import { Component, effect, HostListener, inject, signal } from '@angular/core';
+import { SidebarService } from '../../core/services/sidebar.service';
+import { LeftSidebarComponent } from "../components/left-sidebar/left-sidebar.component";
+import { MainComponent } from "../../main/main.component";
+import { DashboardRoutingModule } from "./dashboard-routing-module";
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-dashboard-component',
+  imports: [LeftSidebarComponent, MainComponent, DashboardRoutingModule],
+  templateUrl: './dashboard-component.html',
   standalone: true,
-  imports: [LeftSidebarComponent, MainComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
 })
-export class AppComponent implements OnInit {
+export class DashboardComponent {
   private sidebarService = inject(SidebarService);
   isLeftSidebarCollapsed = signal<boolean>(false);
   screenWidth = signal<number>(window.innerWidth);

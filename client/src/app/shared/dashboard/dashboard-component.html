@@ -1,0 +1,13 @@
+<!-- <app-sidebar-component />
+<app-header-component /> -->
+<!-- <app-left-sidebar></app-left-sidebar>
+<main class="min-h-[100dvh] pl-[300px] pt-[70px] pe-[20px] bg-gray-50">
+    <router-outlet />
+</main> -->
+
+<app-left-sidebar
+  [isLeftSidebarCollapsed]="isLeftSidebarCollapsed()"
+  (changeIsLeftSidebarCollapsed)="changeIsLeftSidebarCollapsed($event)"
+/>
+
+<app-main [isLeftSidebarCollapsed]="isLeftSidebarCollapsed()" [screenWidth]="screenWidth()" />

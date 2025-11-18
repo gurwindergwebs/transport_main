@@ -6,7 +6,6 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     const adminEmail = "admin@topntech.com";
 
-    // check if admin exists
     const existingUser = await queryInterface.rawSelect(
       "Users",
       {
