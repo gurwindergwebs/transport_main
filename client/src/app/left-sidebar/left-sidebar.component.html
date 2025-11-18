@@ -1,0 +1,43 @@
+<div
+  class="fixed top-0 h-screen bg-primary transition-all duration-500 ease-in-out shadow-[0.063rem_0_1.25rem_0_#8690a3] z-50"
+  [ngClass]="isLeftSidebarCollapsed() ? 'w-16 max-[424px]:w-14' : 'w-[16.5625rem] max-[424px]:w-full'">
+  <!-- Logo Section -->
+  <div class="flex items-center justify-between mt-5 w-full px-4 max-[424px]:px-2 max-[424px]:mt-3">
+    <div class="flex items-center">
+      @if (!isLeftSidebarCollapsed()) {
+      <div class="text-xl font-bold text-white max-[424px]:text-base">App Logo</div>
+      }
+      @if (isLeftSidebarCollapsed()) {
+      <div class="text-xl font-bold text-white max-[424px]:text-lg">A</div>
+      }
+    </div>
+    @if (!isLeftSidebarCollapsed()) {
+    <button
+      class="ml-2 text-white hover:text-gray-300 focus:outline-none max-[424px]:ml-1"
+      (click)="closeSidenav()">
+     
+    
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 max-[424px]:h-5 max-[424px]:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+    }
+  </div>
+
+
+  <!-- Navigation -->
+  <ul class="list-none p-2 mt-5 flex flex-col items-center h-[calc(100%-3.65rem)] cursor-pointer max-[424px]:p-1 max-[424px]:mt-3">
+    @for (item of items; track $index) {
+    <li class="w-full mb-2 max-[424px]:mb-1">
+      <a class="flex items-center h-12 text-white no-underline rounded-xl transition-all duration-300 ease-in-out hover:bg-white hover:text-black max-[424px]:h-10 max-[424px]:rounded-lg"
+        [routerLink]="item.routeLink" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <i class="text-2xl w-8 min-w-8 text-center p-3 sidenav-link-icon max-[424px]:text-xl max-[424px]:w-7 max-[424px]:min-w-7 max-[424px]:p-2" [class]="item.icon"></i>
+
+        @if (!isLeftSidebarCollapsed()) {
+        <span class="ml-6 sidenav-link-text max-[424px]:ml-3 max-[424px]:text-sm">{{ item.label }}</span>
+        }
+      </a>
+    </li>
+    }
+  </ul>
+</div>
