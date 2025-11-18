@@ -1,0 +1,76 @@
+<aside
+    class="fixed z-[1199] h-[100dvh] lg:h-[calc(100dvh_-_70px)] bottom-0 lg:left-0 left-[-288px] w-72 bg-transparent lg:px-3 transition-all duration-300">
+    <div class="flex flex-col justify-between items-stretch h-full w-full bg-white rounded-t-lg border border-gray-200">
+        <!-- Main Menu -->
+        <ul class="p-2 flex-1 overflow-x-hidden">
+            <li class="mb-6">
+                <!-- Menu Search List -->
+                <div class="menuSearchbarList lg:hidden">
+                    <form action="#"
+                        class="border border-gray-200 rounded-full h-12 w-full bg-white overflow-hidden relative">
+                        <input type="search" placeholder="Menu List Search  "
+                            class="h-full w-full pe-10 ps-3 rounded-full focus-visible:outline-none" />
+                        <button type="submit"
+                            class="h-10 w-10 bg-gray-50 rounded-full border border-gray-200 absolute top-1/2 -translate-y-1/2 right-1 flex justify-center items-center hover:border-t-2 hover:border-t-gray-300 hover:shadow-lg transition-shadow duration-300">
+                            <i-lucide [img]="Search" class="h-6 w-6 text-gray-800"></i-lucide>
+                        </button>
+                    </form>
+                </div>
+            </li>
+            <li class="mb-2">
+                <a [routerLink]="['/']"
+                    class="text-[.9rem] flex justify-start items-center bg-[#f9fbfc] gap-2 px-3 py-2 rounded-full border-b border-gray-200 hover:border-gray-400 hover:border-t hover:border-b-0 hover:shadow-lg transition-shadow duration-300"><i-lucide
+                        [img]="House" class="h-6 w-6"></i-lucide>
+                    <span>Dashboard</span></a>
+            </li>
+            <li class="mb-2">
+                <a [routerLink]="['users']"
+                    class="text-[.9rem] flex justify-start items-center bg-[#f9fbfc] gap-2 px-3 py-2 rounded-full border-b border-gray-200 hover:border-gray-400 hover:border-t hover:border-b-0 hover:shadow-lg transition-shadow duration-300"><i-lucide
+                        [img]="Sheet" class="h-6 w-6"></i-lucide>
+                    <span>User Management</span></a>
+            </li>
+            <li class="mb-2">
+                <a [routerLink]="['locations']"
+                    class="text-[.9rem] flex justify-start items-center bg-[#f9fbfc] gap-2 px-3 py-2 rounded-full border-b border-gray-200 hover:border-gray-400 hover:border-t hover:border-b-0 hover:shadow-lg transition-shadow duration-300"><i-lucide
+                        [img]="TabletSmartphone" class="h-6 w-6"></i-lucide>
+                    <span>Location Management</span></a>
+            </li>
+            <li class="mb-2">
+                <a [routerLink]="['transports']"
+                    class="text-[.9rem] flex justify-start items-center bg-[#f9fbfc] gap-2 px-3 py-2 rounded-full border-b border-gray-200 hover:border-gray-400 hover:border-t hover:border-b-0 hover:shadow-lg transition-shadow duration-300"><i-lucide
+                        [img]="ShoppingCart" class="h-6 w-6"></i-lucide>
+                    <span>Transport Management</span></a>
+            </li>
+            <li class="mb-2">
+                <a [routerLink]="['transport-requests']"
+                    class="text-[.9rem] flex justify-start items-center bg-[#f9fbfc] gap-2 px-3 py-2 rounded-full border-b border-gray-200 hover:border-gray-400 hover:border-t hover:border-b-0 hover:shadow-lg transition-shadow duration-300"><i-lucide
+                        [img]="FolderKanban" class="h-6 w-6"></i-lucide>
+                    <span>Transport Request</span></a>
+            </li>
+            <li class="mb-2">
+                <a [routerLink]="['subscription-types']"
+                    class="text-[.9rem] flex justify-start items-center bg-[#f9fbfc] gap-2 px-3 py-2 rounded-full border-b border-gray-200 hover:border-gray-400 hover:border-t hover:border-b-0 hover:shadow-lg transition-shadow duration-300"><i-lucide
+                        [img]="ScanBarcode" class="h-6 w-6"></i-lucide>
+                    <span>Subscription Types</span></a>
+            </li>
+            <li class="mb-2">
+                <a [routerLink]="['contact-us']"
+                    class="text-[.9rem] flex justify-start items-center bg-[#f9fbfc] gap-2 px-3 py-2 rounded-full border-b border-gray-200 hover:border-gray-400 hover:border-t hover:border-b-0 hover:shadow-lg transition-shadow duration-300"><i-lucide
+                        [img]="ScanBarcode" class="h-6 w-6"></i-lucide>
+                    <span>Contact Us</span></a>
+            </li>
+        </ul>
+        <div class="sideHeader p-2">
+            <div
+                class="profile flex flex-col gap-2 justify-start items-center border border-gray-200 bg-[#f9fbfc] rounded-lg p-5">
+                <div class="profilePic w-full aspect-square rounded-full overflow-hidden">
+                    <img src="user2.jpg" alt="user Profile pic" class="h-full w-full" />
+                </div>
+                <div class="profileInfo text-center">
+                    <h3 class="text-[1rem]">Hello User</h3>
+                    <!-- <h6 class="text-[.8rem]">userhello01@gmail.com</h6> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
