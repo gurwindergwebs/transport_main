@@ -8,7 +8,7 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
       },
-      username: {
+      name: {
         type: Sequelize.STRING(25),
         allowNull: false,
       },
@@ -17,12 +17,21 @@ module.exports = {
         unique: true,
         allowNull: true,
       },
+      phone: {
+        type: Sequelize.STRING(15),
+        allowNull: true,
+        unique: true,
+      },
       password: {
         type: Sequelize.STRING(100),
         allowNull: true,
       },
+      tenant_id: {
+        type: Sequelize.UUID,
+        allowNull: true,
+      },
       role: {
-        type: Sequelize.ENUM("ADMIN", "USER"),
+        type: Sequelize.ENUM("ADMIN", "USER", "TRANSPORTER"),
         defaultValue: "USER",
       },
       status: {

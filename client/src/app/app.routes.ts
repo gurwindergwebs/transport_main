@@ -8,4 +8,8 @@ export const routes: Routes = [
                 (c) => c.DashboardRoutingModule
             ),
     },
+    {
+        path: '**',
+        redirectTo: ''
+    }
 ];

@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
         autoIncrement: true,
         primaryKey: true,
       },
-      username: {
+      name: {
         type: DataTypes.STRING(25),
         allowNull: false,
       },
@@ -22,14 +22,22 @@ module.exports = (sequelize, DataTypes) => {
         unique: true,
         allowNull: true,
       },
+      phone: {
+        type: DataTypes.STRING(15),
+        allowNull: true,
+        unique: true,
+      },
       password: {
         type: DataTypes.STRING(100),
         allowNull: true,
       },
+      tenant_id: {
+        type: DataTypes.UUID,
+        allowNull: true,
+      },
       role: {
-        type: DataTypes.ENUM("ADMIN", "USER"),
+        type: DataTypes.ENUM("ADMIN", "USER", "TRANSPORTER"),
         defaultValue: "USER",
-        allowNull: false,
       },
       status: {
         type: DataTypes.BOOLEAN,

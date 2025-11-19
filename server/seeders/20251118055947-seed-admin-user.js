@@ -6,6 +6,7 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     const adminEmail = "admin@topntech.com";
 
+    // Check if admin already exists
     const existingUser = await queryInterface.rawSelect(
       "Users",
       {
@@ -19,8 +20,10 @@ module.exports = {
 
       await queryInterface.bulkInsert("Users", [
         {
-          username: "admin",
+          name: "Admin",
           email: adminEmail,
+          phone: null, // optional
+          tenant_id: null, // optional
           password: hashedPassword,
           role: "ADMIN",
           status: true,

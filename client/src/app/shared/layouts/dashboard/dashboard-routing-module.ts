@@ -7,6 +7,13 @@ const routes: Routes = [
     path: '',
     component: DashboardComponent,
     children: [
+      {
+        path: '',
+        loadComponent: () =>
+          import(
+            '../../../shared/components/dashboard/dashboard-component'
+          ).then((m) => m.DashboardComponent),
+      },
     ],
   },
 ];
