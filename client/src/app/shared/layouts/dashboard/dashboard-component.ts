@@ -1,21 +1,14 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule, RouterOutlet } from '@angular/router';
-import { SidebarComponent } from '../../components/sidebar/sidebar.component';
-import { NavbarComponent } from '../../components/navbar/navbar.component';
+import { Component } from '@angular/core';
+import { SidebarComponent } from "../../components/sidebar/sidebar-component";
+import { HeaderComponent } from "../../components/header/header-component";
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-component',
-  imports: [CommonModule, RouterModule, SidebarComponent, NavbarComponent, RouterOutlet],
+  imports: [SidebarComponent, HeaderComponent, RouterOutlet],
   templateUrl: './dashboard-component.html',
   standalone: true,
-  styleUrls: ['./dashboard-component.css'],
-  encapsulation: ViewEncapsulation.None
 })
 export class DashboardComponent {
-  isSidebarCollapsed = false;
 
-  toggleSidebar() {
-    this.isSidebarCollapsed = !this.isSidebarCollapsed;
-  }
 }
