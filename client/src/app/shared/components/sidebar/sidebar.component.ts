@@ -39,7 +39,7 @@ export class SidebarComponent {
   readonly Settings = Settings;
 
   menuItems: MenuItem[] = [
-    { icon: LayoutDashboard, label: 'Dashboard', route: '/dashboard', active: true },
+    { icon: LayoutDashboard, label: 'Dashboard', route: '/', active: true },
     { icon: CreditCard, label: 'Transactions', route: '/transactions', active: false },
     { icon: Users, label: 'Customers', route: '/customers', active: false },
     { icon: Package, label: 'Products', route: '/products', active: false },

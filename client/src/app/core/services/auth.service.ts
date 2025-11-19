@@ -10,7 +10,7 @@ import { User } from '../../shared/models/interface';
 export class AuthService {
   private http = inject(HttpClient);
 
-  private apiUrl = `${environment.apiUrl}/api/auth`;
+  private apiUrl = `${environment.apiUrl}/auth`;
 
   // User login
   login(formData: FormData): Observable<{ user: User; accessToken: string }> {
