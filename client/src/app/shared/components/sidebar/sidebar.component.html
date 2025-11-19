@@ -10,14 +10,21 @@
 
   <nav class="sidebar-nav">
     <ul class="nav-list">
-      <li *ngFor="let item of menuItems" 
-          class="nav-item" 
-          [class.active]="item.active"
-          (click)="onMenuItemClick(item)">
-        <a [routerLink]="item.route" class="nav-link">
-          <lucide-icon [img]="item.icon" [size]="20" class="nav-icon"></lucide-icon>
+      <li 
+        *ngFor="let item of menuItems"
+        class="nav-item cursor-pointer"
+        [class.active]="item.active"
+        [routerLink]="item.route"
+        (click)="onMenuItemClick(item)"
+      >
+        <div class="nav-link">
+          <lucide-icon
+            [img]="item.icon"
+            [size]="20"
+            class="nav-icon"
+          ></lucide-icon>
           <span class="nav-label" *ngIf="!isCollapsed">{{ item.label }}</span>
-        </a>
+        </div>
       </li>
     </ul>
   </nav>

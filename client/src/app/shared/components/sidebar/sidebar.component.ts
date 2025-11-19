@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output, Input, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
 import { LucideAngularModule, LayoutDashboard, CreditCard, Users, Package, Table, FileText, MessageSquare, UsersRound, Image, Bell, BarChart3, Calendar, TrendingUp, Settings } from 'lucide-angular';
 
 interface MenuItem {
@@ -13,7 +13,7 @@ interface MenuItem {
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [CommonModule, RouterModule, LucideAngularModule],
+  imports: [CommonModule, RouterLink, LucideAngularModule],
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css'],
   encapsulation: ViewEncapsulation.None
